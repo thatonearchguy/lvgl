@@ -20,5 +20,5 @@ add_library(lvgl::lvgl ALIAS lvgl)
 target_compile_definitions(
   lvgl PUBLIC $<$<BOOL:${LV_LVGL_H_INCLUDE_SIMPLE}>:LV_LVGL_H_INCLUDE_SIMPLE>
               $<$<BOOL:${LV_CONF_INCLUDE_SIMPLE}>:LV_CONF_INCLUDE_SIMPLE>)
-#target_compile_options(lvgl PUBLIC -mfloat-abi=softfp)
+target_compile_options(lvgl PUBLIC -mfloat-abi=hard)
 target_include_directories(lvgl SYSTEM PUBLIC ${LVGL_ROOT_DIR} ${LV_CONF_DIR})
